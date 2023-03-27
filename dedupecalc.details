@@ -1,0 +1,4 @@
+name: Deduplication Ratio Calculator
+description: A simple calculator to determine deduplication ratio and percentage.
+authors:
+    - Jonathan Maier
