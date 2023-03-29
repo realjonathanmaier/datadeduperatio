@@ -1,6 +1,32 @@
-<HTML>
-    <BODY>
-        <H1>Hello World!!</H1>
-    </BODY>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deduplication Ratio Calculator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
 
-</HTML>
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Deduplication Ratio Calculator</h1>
+  <p>Enter an array of numbers:</p>
+  <input type="text" id="number-array" value="1, 2, 2, 3, 4, 4, 4, 5">
+  <button onclick="calculate()">Calculate</button>
+  <p id="deduplication-ratio"></p>
+
+  <script src="deduplication-ratio.js"></script>
+</body>
+</html>
