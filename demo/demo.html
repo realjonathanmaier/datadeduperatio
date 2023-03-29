@@ -46,15 +46,18 @@
 		<button type="button" onclick="calculateRatio()">Calculate</button>
 	</form>
 
-	<div class="result" id="result"></div>
+	<div class="result" id="resultPercent"></div>
+  <div class="result" id="resultRatio"></div>
 
 	<script>
 		function calculateRatio() {
 			const originalSize = parseInt(document.getElementById('originalSize').value);
 			const deduplicatedSize = parseInt(document.getElementById('deduplicatedSize').value);
-			const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize) * 100;
+			const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
+      const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
-			document.getElementById('result').innerHTML = `Deduplication Ratio: ${deduplicationRatio.toFixed(2)}%`;
+			document.getElementById('resultPercent').innerHTML = `Deduplication Ratio Percent: ${deduplicationRatioPercent.toFixed(2)}%`;
+      document.getElementById('resultRatio').innerHTML = `Deduplication Ratio: 1:${deduplicationRatio.toFixed(2)}`;
 		}
 	</script>
 </body>
