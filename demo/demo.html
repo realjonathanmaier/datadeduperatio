@@ -56,6 +56,7 @@
   
   // Simplify the ratio by dividing both numerator and denominator by the greatest common divisor (GCD)
   const gcd = findGCD(originalSize, deduplicatedSize);
+  console.log(parseInt(gcd));
   const numerator = (originalSize - deduplicatedSize) / gcd;
   const denominator = originalSize / gcd;
   
