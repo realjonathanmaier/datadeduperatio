@@ -41,7 +41,7 @@
 		<input type="number" id="originalSize" required>
 
 		<label for="deduplicatedSize">Deduplicated Size (in bytes)</label>
-		<input type="number" id="deduplicatedSize" required>
+		<input type="text" id="deduplicatedSize" required>
 
 		<button type="button" onclick="calculateRatio()">Calculate</button>
 	</form>
@@ -76,7 +76,10 @@ function findGCD(a, b) {
 
 		function calculateRatio() {
 			const originalSize = parseInt(document.getElementById('originalSize').value);
-			const deduplicatedSize = parseInt(document.getElementById('deduplicatedSize').value);
+			const deduplicatedSizeText = parseInt(document.getElementById('deduplicatedSize').text);
+			const deduplicatedSize = parseFloat(deduplicatedSizeText);
+			console.log(deduplicatedSize);
+
 			const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
       const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
