@@ -76,7 +76,7 @@ function findGCD(a, b) {
 
 		function calculateRatio() {
 			const originalSize = parseInt(document.getElementById('originalSize').value);
-			const deduplicatedSizeText = parseInt(document.getElementById('deduplicatedSize').text);
+			const deduplicatedSizeText = document.getElementById('deduplicatedSize').value;
 			const deduplicatedSize = parseFloat(deduplicatedSizeText);
 			console.log(deduplicatedSize);
 
