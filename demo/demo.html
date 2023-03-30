@@ -50,29 +50,9 @@
   <div class="result" id="resultRatio"></div>
 
 	<script>
-  function calculateDeduplicationRatio(originalSize, deduplicatedSize) {
-  // Calculate the deduplication ratio
-  const ratio = (originalSize - deduplicatedSize) / originalSize;
-  
-  // Simplify the ratio by dividing both numerator and denominator by the greatest common divisor (GCD)
-  const gcd = findGCD(originalSize, deduplicatedSize);
-  console.log(parseInt(gcd));
-  const numerator = (originalSize - deduplicatedSize) / gcd;
-  const denominator = originalSize / gcd;
-  
-  // Return the simplified ratio as a string with a colon
-  return `${numerator}:${denominator}`;
-}
-
-function findGCD(a, b) {
-  // Find the greatest common divisor (GCD) using the Euclidean algorithm
-  let temp;
-  while (b !== 0) {
-    temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
+function calculateDeduplicationRatio(originalSize, dedupedSize) {
+  const ratio = Math.round((originalSize / dedupedSize) * 10) / 10; // Round to one decimal place
+  return `${ratio}:1`; // Return deduplication ratio as a string with a colon
 }
 
 		function calculateRatio() {
@@ -84,10 +64,10 @@ function findGCD(a, b) {
 			const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
       const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
-			document.getElementById('resultPercent').innerHTML = `Deduplication Ratio Percent: ${deduplicationRatioPercent.toFixed(2)}%`;
+			document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${deduplicationRatioPercent.toFixed(2)}%`;
       const ratio = calculateDeduplicationRatio(originalSize, deduplicatedSize);
 
-      document.getElementById('resultRatio').innerHTML = `Deduplication Ratio: ${ratio}`;
+      document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
 		}
 	</script>
 </body>
