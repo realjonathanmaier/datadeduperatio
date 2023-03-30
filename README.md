@@ -10,3 +10,7 @@ http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/sample
 
 ### Code from own github.
 https://jsfiddle.net/gh/get/library/pure/realjonathanmaier/datadeduperatio/tree/master/demo
+
+
+
+https//jsfiddle.net/JM12345/ajz91g3y/embed/html,result/
