@@ -56,7 +56,7 @@
 		}
 
 		function calculateRatio() {
-			const originalSize = parseInt(document.getElementById('originalSize').value);
+			const originalSize = parseFloat(document.getElementById('originalSize').value);
 			const deduplicatedSizeText = document.getElementById('deduplicatedSize').value;
 			const deduplicatedSize = parseFloat(deduplicatedSizeText);
 			console.log(deduplicatedSize);
