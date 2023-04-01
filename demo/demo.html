@@ -3,23 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Deduplication Ratio Calculator</title>
-	<link rel="stylesheet" type="text/css" href="./demo.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
 </head>
 <body>
 	<h1>Deduplication Ratio Calculator</h1>
 	<form>
 		<label for="originalSize">Original Size (in bytes)</label>
 		<input type="text" id="originalSize" required>
-		<br>
 
 		<label for="deduplicatedSize">Deduplicated Size (in bytes)</label>
 		<input type="text" id="deduplicatedSize" required>
 
 		<button type="button" onclick="calculateRatio()">Calculate</button>
+		<br>
+		<br>
+		<div class="result" id="resultPercent"></div>
+		<div class="result" id="resultRatio"></div>
 	</form>
-
-	<div class="result" id="resultPercent"></div>
-  <div class="result" id="resultRatio"></div>
 
 	<script>
 		function calculateDeduplicationRatio(originalSize, dedupedSize) {
