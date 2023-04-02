@@ -1,3 +1,7 @@
+.button:hover {
+  background-color: #3e8e41;
+}
+
 form {
 	width: 300px;
 	margin: 0 auto;
@@ -15,18 +19,3 @@ input[type="text"] {
 	border-radius: 5px;
     border: 1px solid #ccc;
 }
-
-input[type="button"] {
-    //background-color: #4CAF50;
-    background-color: #cf574e;
-    //color: white;
-    color: yellow;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type="button"]:hover {
-    background-color: #45a049;
-  }
