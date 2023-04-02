@@ -47,17 +47,20 @@
 				<h2>Deduplication Ratio Calculator</h2>
 			</center>
 
-			<label for="originalSize">Original Size (in bytes)</label>
+			<label for="originalSize">Original Size Before Deduplication</label>
 			<input type="text" id="originalSize" required>
 
-			<label for="deduplicatedSize">Deduplicated Size (in bytes)</label>
+			<label for="deduplicatedSize">Size After Deduplication</label>
 			<input type="text" id="deduplicatedSize" required>
 
-			<button type="button" class="buttonStyle" onclick="calculateRatio()">Calculate</button>
+			<center>
+				<button type="button" class="buttonStyle" onclick="calculateRatio()">Calculate</button>
+			</center>
 			<br>
+			<br>
+			<div class="result" id="resultRatio"></div>
 			<br>
 			<div class="result" id="resultPercent"></div>
-			<div class="result" id="resultRatio"></div>
 		</form>
 
 		<script>
@@ -75,12 +78,13 @@
 				const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
 				const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
-				document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${
-					deduplicationRatioPercent.toFixed(2)
-				}%`;
 				const ratio = calculateDeduplicationRatio(originalSize, deduplicatedSize);
+				//document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
+				document.getElementById('resultRatio').innerHTML = `Deduplication Ratio: ${ratio}`;
 
-				document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
+				//document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${deduplicationRatioPercent.toFixed(2) }%`;
+				document.getElementById('resultPercent').innerHTML = `Deduplication Ratio as a Percentage: ${deduplicationRatioPercent.toFixed(2) }%`;
+
 			}
 		</script>
 	</body>
