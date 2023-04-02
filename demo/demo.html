@@ -4,10 +4,48 @@
 	<meta charset="UTF-8">
 	<title>Deduplication Ratio Calculator</title>
 	<link rel="stylesheet" type="text/css" href="demo.css">
+	<style>
+		.button:hover {
+					background-color: #3e8e41;
+					}
+
+		form {
+			width: 300px;
+			margin: 0 auto;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		.button {
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: #4CAF50;
+				color: #fff;
+				font-size: 16px;
+				font-weight: bold;
+				text-decoration: none;
+				border-radius: 5px;
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+				}
+	</style>
 </head>
 <body>
 	<form>
-		<h1>Deduplication Ratio Calculator</h1>
+		<center>
+			<h2>Deduplication Ratio Calculator</h2>
+		</center>
 
 		<label for="originalSize">Original Size (in bytes)</label>
 		<input type="text" id="originalSize" required>
