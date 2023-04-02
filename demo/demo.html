@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Deduplication Ratio Calculator</title>
-	<link rel="stylesheet" type="text/css" href="demo.css">
-	<style>
-		form {
-			width: 300px;
-			margin: 0 auto;
-		}
+	<head>
+		<meta charset="UTF-8">
+		<title>Deduplication Ratio Calculator</title>
+		<link rel="stylesheet" type="text/css" href="demo.css">
+		<style>
+			form {
+				width: 300px;
+				margin: 0 auto;
+			}
 
-		label {
-			display: block;
-			margin-bottom: 5px;
-		}
+			label {
+				display: block;
+				margin-bottom: 5px;
+			}
 
-		input[type="text"] {
-			width: 100%;
-			padding: 10px;
-			margin-bottom: 20px;
-			border-radius: 5px;
-			border: 1px solid #ccc;
-		}
-		.button {
+			input[type="text"] {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 20px;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+			}
+			.buttonStyle {
 				display: inline-block;
 				padding: 10px 20px;
-				//background-color: #4CAF50;
-				background-color: #cf574e;
+				background-color: #4CAF50;
 				color: #fff;
 				font-size: 16px;
 				font-weight: bold;
@@ -35,53 +34,54 @@
 				border: none;
 				cursor: pointer;
 				transition: background-color 0.3s ease;
-				}
+			}
 
-		.button:hover {
-					background-color: #3e8e41;
-					}
+			.buttonStyle:hover {
+				background-color: #3e8e41;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<center>
+				<h2>Deduplication Ratio Calculator</h2>
+			</center>
 
-	</style>
-</head>
-<body>
-	<form>
-		<center>
-			<h2>Deduplication Ratio Calculator</h2>
-		</center>
+			<label for="originalSize">Original Size (in bytes)</label>
+			<input type="text" id="originalSize" required>
 
-		<label for="originalSize">Original Size (in bytes)</label>
-		<input type="text" id="originalSize" required>
+			<label for="deduplicatedSize">Deduplicated Size (in bytes)</label>
+			<input type="text" id="deduplicatedSize" required>
 
-		<label for="deduplicatedSize">Deduplicated Size (in bytes)</label>
-		<input type="text" id="deduplicatedSize" required>
+			<button type="button" class="buttonStyle" onclick="calculateRatio()">Calculate</button>
+			<br>
+			<br>
+			<div class="result" id="resultPercent"></div>
+			<div class="result" id="resultRatio"></div>
+		</form>
 
-		<button type="button" onclick="calculateRatio()">Calculate</button>
-		<br>
-		<br>
-		<div class="result" id="resultPercent"></div>
-		<div class="result" id="resultRatio"></div>
-	</form>
+		<script>
+			function calculateDeduplicationRatio(originalSize, dedupedSize) {
+				const ratio = Math.round((originalSize / dedupedSize) * 10) / 10; // Round to one decimal place
+				return `${ratio}:1`; // Return deduplication ratio as a string with a colon
+			}
 
-	<script>
-		function calculateDeduplicationRatio(originalSize, dedupedSize) {
-			const ratio = Math.round((originalSize / dedupedSize) * 10) / 10; // Round to one decimal place
-			return `${ratio}:1`; // Return deduplication ratio as a string with a colon
-		}
+			function calculateRatio() {
+				const originalSize = parseFloat(document.getElementById('originalSize').value);
+				const deduplicatedSizeText = document.getElementById('deduplicatedSize').value;
+				const deduplicatedSize = parseFloat(deduplicatedSizeText);
+				console.log(deduplicatedSize);
 
-		function calculateRatio() {
-			const originalSize = parseFloat(document.getElementById('originalSize').value);
-			const deduplicatedSizeText = document.getElementById('deduplicatedSize').value;
-			const deduplicatedSize = parseFloat(deduplicatedSizeText);
-			console.log(deduplicatedSize);
+				const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
+				const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
-			const deduplicationRatioPercent = ((originalSize - deduplicatedSize) / originalSize) * 100;
-			const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
+				document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${
+					deduplicationRatioPercent.toFixed(2)
+				}%`;
+				const ratio = calculateDeduplicationRatio(originalSize, deduplicatedSize);
 
-			document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${deduplicationRatioPercent.toFixed(2)}%`;
-			const ratio = calculateDeduplicationRatio(originalSize, deduplicatedSize);
-
-			document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
-		}
-	</script>
-</body>
+				document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
+			}
+		</script>
+	</body>
 </html>
