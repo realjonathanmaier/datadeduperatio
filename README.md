@@ -14,5 +14,4 @@ https://jsfiddle.net/gh/get/library/pure/realjonathanmaier/datadeduperatio/tree/
 
 ### Working embed with customized tabs
 
--- https://jsfiddle.net/JM12345/ajz91g3y/embed?tabs=result
 https://jsfiddle.net/JM12345/5yeubt3r/embed?tabs=result

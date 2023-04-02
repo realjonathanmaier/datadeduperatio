@@ -2,6 +2,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<!--
+		MIT License
+
+		Copyright (c) 2023 Jonathan Maier
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+		-->
 		<title>Deduplication Ratio Calculator</title>
 		<link rel="stylesheet" type="text/css" href="demo.css">
 		<style>
@@ -43,10 +54,12 @@
 	</head>
 	<body>
 		<form>
+			<!--
 			<center>
 				<h2>Deduplication Ratio Calculator</h2>
 			</center>
-
+			-->
+			<br>
 			<label for="originalSize">Original Size Before Deduplication</label>
 			<input type="text" id="originalSize" required>
 
@@ -79,10 +92,8 @@
 				const deduplicationRatio = ((originalSize - deduplicatedSize) / originalSize)
 
 				const ratio = calculateDeduplicationRatio(originalSize, deduplicatedSize);
-				//document.getElementById('resultRatio').innerHTML = `Deduplication Ratio viewed as every ${ratio} units, 1 unit is saved: ${ratio}`;
 				document.getElementById('resultRatio').innerHTML = `Deduplication Ratio: ${ratio}`;
 
-				//document.getElementById('resultPercent').innerHTML = `Deduplication Ratio signifying a percentage of reduction of data when compared to the original size: ${deduplicationRatioPercent.toFixed(2) }%`;
 				document.getElementById('resultPercent').innerHTML = `Deduplication Ratio as a Percentage: ${deduplicationRatioPercent.toFixed(2) }%`;
 
 			}
