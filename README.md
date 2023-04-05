@@ -13,5 +13,8 @@ https://jsfiddle.net/gh/get/library/pure/realjonathanmaier/datadeduperatio/tree/
 
 
 ### Working embed with customized tabs
+This URL will need to be updated if code in the Github repo changes.
 
+```
 https://jsfiddle.net/JM12345/5yeubt3r/embed?tabs=result
+```
